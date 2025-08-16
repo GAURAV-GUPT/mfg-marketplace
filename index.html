@@ -52,7 +52,9 @@
 
   <script>
     const agents = [
-      { icon: "🛠️", title: "Application Logs Analyser Agent", desc: "An AI-powered Application Logs Analyser Agent automatically ingests, processes, and understands log data to identify patterns and anomalies", kpis: "Mean time to resolve (MTTR), Mean time to detection (MTTD)", benefits: "Improves Uptime", video: "https://www.youtube.com/embed/JOiT6zC1S44?si=KamTL9f3m2epPfsJ" }
+      { icon: "🛠️", title: "Application Logs Analyser Agent", desc: "An AI-powered Application Logs Analyser Agent automatically ingests, processes, and understands log data to identify patterns and anomalies", kpis: "Mean time to resolve (MTTR), Mean time to detection (MTTD)", benefits: "Improves Uptime", video: "https://www.youtube.com/embed/JOiT6zC1S44?si=KamTL9f3m2epPfsJ" },
+        icon: "🔄", title: "Legacy Code Convertor Agent", desc: "A Legacy Code Converter Agent uses GenAI to automatically analyze, refactor, and translate outdated codebases into modern programming languages", kpis: "Tech Debt Remediation, Mordernization", benefits: "Scalable & Secure", video: "https://www.youtube.com/embed/JOiT6zC1S44?si=KamTL9f3m2epPfsJ" }
+
     ];
 
     
@@ -71,17 +73,14 @@
       `;
       cardsContainer.appendChild(card);
     }
-    cardsContainer.innerHTML += `<div class='col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4'>Utility</div>`;
-      agents.filter(a => ['Asset Integrity Manager', 'Demand Forecasting Agent', 'Energy Trading Agent', 'Grid Fault Forecasting Agent', 'Renewable Energy Integration', 'Streamlining Field Ops Agent', 'Supply Chain Opt Agent', 'Utility Energy Management Agent'].includes(a.title)).forEach(agent => renderCard(agent));
+    cardsContainer.innerHTML += `<div class='col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4'>At the manufacturing plant-floor</div>`;
+      agents.filter(a => ['Equipment Predictive Maintenance'].includes(a.title)).forEach(agent => renderCard(agent));
     
-      cardsContainer.innerHTML += `<div class='col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4'>Oil & Gas</div>`;
-      agents.filter(a => ['O&G Price Forecast Agent', 'O&G Analytics Agent', 'O&G Chemical Formula Agent', 'O&G Safety Agent', 'Reservoir Analysis Agent', 'Drilling Optimization Agent'].includes(a.title)).forEach(agent => renderCard(agent));
-    
-      cardsContainer.innerHTML += `<div class='col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4'>Water</div>`;
-      agents.filter(a => ['Water LLM Storm Simulator'].includes(a.title)).forEach(agent => renderCard(agent));
+      cardsContainer.innerHTML += `<div class='col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4'>At the Retailers</div>`;
+      agents.filter(a => ['Car Remote Diagnostics Agent'].includes(a.title)).forEach(agent => renderCard(agent));
     
       cardsContainer.innerHTML += `<div class='col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4'>Application Maintenance</div>`;
-      agents.filter(a => ['Application Logs Analyser Agent', 'Support Helper Agent'].includes(a.title)).forEach(agent => renderCard(agent));
+      agents.filter(a => ['Application Logs Analyser Agent', 'Legacy Code Convertor Agent'].includes(a.title)).forEach(agent => renderCard(agent));
 
     function openModal(videoURL) {
       let finalURL = videoURL;
