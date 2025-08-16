@@ -20,7 +20,6 @@
   </style>
 </head>
 <body>
-  <!-- Hero Section -->
   <section class="text-center py-24 px-6">
     <h1 class="text-5xl font-extrabold mb-4">TCS UK MFG ISU - Gen AI & Deployable Agents</h1>
     <p class="text-lg max-w-3xl mx-auto mb-6">
@@ -32,15 +31,12 @@
     </a>
   </section>
 
-  <!-- Solutions Section -->
   <section id="solutions" class="bg-white text-gray-900 py-16 px-6">
     <h2 class="text-3xl font-bold text-center mb-10">Featured Agents</h2>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="cards">
-      <!-- Cards will be injected here -->
-    </div>
+      </div>
   </section>
 
-  <!-- Modal -->
   <div id="modal" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-75 z-50">
     <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full p-6 relative">
       <iframe id="videoFrame" class="w-full h-96" frameborder="0"
@@ -53,10 +49,11 @@
   <script>
     const agents = [
       { icon: "🛠️", title: "Application Logs Analyser Agent", desc: "An AI-powered Application Logs Analyser Agent automatically ingests, processes, and understands log data to identify patterns and anomalies", kpis: "Mean time to resolve (MTTR), Mean time to detection (MTTD)", benefits: "Improves Uptime", video: "https://www.youtube.com/embed/JOiT6zC1S44?si=KamTL9f3m2epPfsJ" },
-        icon: "🔄", title: "Legacy Code Convertor Agent", desc: "A Legacy Code Converter Agent uses GenAI to automatically analyze, refactor, and translate outdated codebases into modern programming languages", kpis: "Tech Debt Remediation, Mordernization", benefits: "Scalable & Secure", video: "https://www.youtube.com/embed/JOiT6zC1S44?si=KamTL9f3m2epPfsJ" }
-
+      { icon: "🔄", title: "Legacy Code Convertor Agent", desc: "A Legacy Code Converter Agent uses GenAI to automatically analyze, refactor, and translate outdated codebases into modern programming languages", kpis: "Tech Debt Remediation, Mordernization", benefits: "Scalable & Secure", video: "https://www.youtube.com/embed/JOiT6zC1S44?si=KamTL9f3m2epPfsJ" },
+      // Added new agents as placeholders for the other sections
+      { icon: "⚙️", title: "Equipment Predictive Maintenance", desc: "Predicts equipment failures to prevent unplanned downtime.", kpis: "OEE Improvement, Downtime Reduction", benefits: "Proactive Maintenance", video: "https://www.youtube.com/embed/JOiT6zC1S44?si=KamTL9f3m2epPfsJ" },
+      { icon: "🚗", title: "Car Remote Diagnostics Agent", desc: "Diagnoses vehicle issues remotely, providing real-time alerts and solutions.", kpis: "Customer Satisfaction, Service Efficiency", benefits: "Reduced Service Cost", video: "https://www.youtube.com/embed/JOiT6zC1S44?si=KamTL9f3m2epPfsJ" }
     ];
-
     
     const cardsContainer = document.getElementById("cards");
 
@@ -73,30 +70,38 @@
       `;
       cardsContainer.appendChild(card);
     }
-    cardsContainer.innerHTML += `<div class='col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4'>At the manufacturing plant-floor</div>`;
-      agents.filter(a => ['Equipment Predictive Maintenance'].includes(a.title)).forEach(agent => renderCard(agent));
     
-      cardsContainer.innerHTML += `<div class='col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4'>At the Retailers</div>`;
-      agents.filter(a => ['Car Remote Diagnostics Agent'].includes(a.title)).forEach(agent => renderCard(agent));
+    // Clear existing content and render cards based on categories
+    cardsContainer.innerHTML = '';
     
-      cardsContainer.innerHTML += `<div class='col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4'>Application Maintenance</div>`;
-      agents.filter(a => ['Application Logs Analyser Agent', 'Legacy Code Convertor Agent'].includes(a.title)).forEach(agent => renderCard(agent));
-
+    // Render the categories and their associated cards
+    function renderCategory(categoryTitle, agentTitles) {
+      const categoryHeader = document.createElement("div");
+      categoryHeader.className = "col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4";
+      categoryHeader.textContent = categoryTitle;
+      cardsContainer.appendChild(categoryHeader);
+      
+      agents.filter(a => agentTitles.includes(a.title)).forEach(agent => renderCard(agent));
+    }
+    
+    renderCategory('At the manufacturing plant-floor', ['Equipment Predictive Maintenance']);
+    renderCategory('At the Retailers', ['Car Remote Diagnostics Agent']);
+    renderCategory('For Application Maintenance & Support', ['Application Logs Analyser Agent', 'Legacy Code Convertor Agent']);
+    
     function openModal(videoURL) {
-      let finalURL = videoURL;
-      if (videoURL.endsWith('.mp4')) {
-        finalURL = `https://www.youtube.com/embed?autoplay=1&mute=1&playlist=&controls=1&rel=0&showinfo=0&modestbranding=1&loop=1&origin=${window.location.origin}&src=${videoURL}`;
-        finalURL = videoURL; // fallback to local if using local videos directly
-      }
-      document.getElementById('videoFrame').src = finalURL;
-      document.getElementById('modal').classList.remove('hidden');
-      document.getElementById('modal').classList.add('flex');
+      const videoFrame = document.getElementById('videoFrame');
+      videoFrame.src = videoURL;
+      const modal = document.getElementById('modal');
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
     }
 
     function closeModal() {
-      document.getElementById('videoFrame').src = "";
-      document.getElementById('modal').classList.add('hidden');
-      document.getElementById('modal').classList.remove('flex');
+      const videoFrame = document.getElementById('videoFrame');
+      videoFrame.src = "";
+      const modal = document.getElementById('modal');
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
     }
   </script>
 </body>
