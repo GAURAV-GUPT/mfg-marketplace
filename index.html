@@ -1,113 +1,114 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>TCS UK MFG ISU - Gen AI & Deployable Agents</title>
-  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Inter', sans-serif;
-      background: linear-gradient(to bottom right, #004080, #00b4d8);
-      color: white;
-    }
-    .card {
-      transition: transform 0.3s ease;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-  </style>
-</head>
-<body>
-  <section class="text-center py-24 px-6">
-    <h1 class="text-5xl font-extrabold mb-4">TCS UK MFG ISU - Gen AI & Deployable Agents</h1>
-    <p class="text-lg max-w-3xl mx-auto mb-6">
-      Transform your IT and Business Services with intelligent AI agents.<br>
-      Optimize efficiency, reduce costs, and enhance sustainability across your entire manufacturing ecosystem.
-    </p>
-    <a href="#solutions" class="inline-block px-8 py-3 bg-white text-blue-700 font-semibold rounded hover:bg-gray-200">
-      Explore Solutions
-    </a>
-  </section>
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+  <title>TCS UK MFG ISU - Gen AI & Deployable Agents</title> 
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet"> 
+  <style> 
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: linear-gradient(to bottom right, #004080, #00b4d8); 
+      color: white; 
+    } 
+    .card { 
+      transition: transform 0.3s ease; 
+    } 
+    .card:hover { 
+      transform: translateY(-5px); 
+    } 
+  </style> 
+</head> 
+<body> 
+  <section class="text-center py-24 px-6"> 
+    <h1 class="text-5xl font-extrabold mb-4">TCS UK MFG ISU - Gen AI & Deployable Agents</h1> 
+    <p class="text-lg max-w-3xl mx-auto mb-6"> 
+      Transform your IT and Business Services with intelligent AI agents.<br> 
+      Optimize efficiency, reduce costs, and enhance sustainability across your entire manufacturing ecosystem. 
+    </p> 
+    <a href="#solutions" class="inline-block px-8 py-3 bg-white text-blue-700 font-semibold rounded hover:bg-gray-200"> 
+      Explore Solutions 
+    </a> 
+  </section> 
 
-  <section id="solutions" class="bg-white text-gray-900 py-16 px-6">
-    <h2 class="text-3xl font-bold text-center mb-10">Featured Agents</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="cards">
-      </div>
-  </section>
+  <section id="solutions" class="bg-white text-gray-900 py-16 px-6"> 
+    <h2 class="text-3xl font-bold text-center mb-10">Featured Agents</h2> 
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="cards"> 
+      </div> 
+  </section> 
 
-  <div id="modal" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-75 z-50">
-    <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full p-6 relative">
-      <iframe id="videoFrame" class="w-full h-96" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-        allowfullscreen></iframe>
-      <button onclick="closeModal()" class="absolute top-2 right-4 text-2xl text-red-600 font-bold">&times;</button>
-    </div>
-  </div>
+  <div id="modal" class="fixed inset-0 hidden items-center justify-center bg-black bg-opacity-75 z-50"> 
+    <div class="bg-white rounded-lg shadow-lg max-w-3xl w-full p-6 relative"> 
+      <iframe id="videoFrame" class="w-full h-96" frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen></iframe> 
+      <button onclick="closeModal()" class="absolute top-2 right-4 text-2xl text-red-600 font-bold">&times;</button> 
+    </div> 
+  </div> 
 
-  <script>
-    const agents = [
-      { icon: "🛠️", title: "Application Logs Analyser Agent", desc: "An AI-powered Application Logs Analyser Agent automatically ingests, processes, and understands log data to identify patterns and anomalies", kpis: "Mean time to resolve (MTTR), Mean time to detection (MTTD)", benefits: "Improves Uptime", video: "https://www.youtube.com/embed/JOiT6zC1S44?si=KamTL9f3m2epPfsJ" },
-      { icon: "🔄", title: "Legacy Code Convertor Agent", desc: "A Legacy Code Converter Agent uses GenAI to automatically analyze, refactor, and translate outdated codebases into modern programming languages", kpis: "Tech Debt Remediation, Mordernization", benefits: "Scalable & Secure", video: "https://www.youtube.com/embed/5sbZlMfsP9Y?si=O0IopJBKbPkw-Q_J" },
-      // Added new agents as placeholders for the other sections
-      { icon: "⚙️", title: "Equipment Predictive Maintenance", desc: "Predicts equipment failures to prevent unplanned downtime.", kpis: "OEE Improvement, Downtime Reduction", benefits: "Proactive Maintenance", video: "https://www.youtube.com/embed/QXo9c8txU4k?si=qIcov37UKqgePnM0" },
-      { icon: "🚗", title: "Car Remote Diagnostics Agent", desc: "Diagnoses vehicle issues remotely, providing real-time alerts and solutions.", kpis: "Customer Satisfaction, Service Efficiency", benefits: "Reduced Service Cost", video: "https://www.youtube.com/embed/AYFmR5KCHcI?si=8KzX35WSZtviPSlM" },
-      { icon: "🚗🆚🚙", title: "(Upcoming)Auto OEM Market Research Agent", desc: "This agent analyzes vehicle specifications, pricing, and features across different brands to provide side-by-side comparisons", kpis: "Price-to-Feature Ratio, Performance Score, and Efficiency Rating", benefits: "Compare Auto OEM Brands", video: "https://www.youtube.com/embed/AYFmR5KCHcI?si=8KzX35WSZtviPSlM" },
-      { icon: "🧠🤖", title: "VIANAI - Talk to your data", desc: "The VIAN AI Hila Platform (https://www.vian.ai/hila-platform) is used to build and deploy reliable, conversational AI applications for enterprises, enabling users to get accurate, real-time insights from their own data.", kpis: "Business Decisions, Time to Insight, Accelerated Decision-Making", benefits: "Improved Business Outcomes", video: "https://www.youtube.com/embed/E-PNyffYHVY?si=yDBQ02yvw7hVcMAF" },
-      { icon: "✨📈💰", title: "TCS WisdomNext - the first GenAI aggregation platform", desc: "TCS WisdomNext is the first GenAI aggregation platform that lets you orchestrate the best of generative AI to solve complex business problems.", kpis: "Business outcomes, Operational efficiency", benefits: "Faster time-to-market & Improved productivity,Business Outcomes,Governance and Compliance ", video: "https://www.youtube.com/embed/Kb79blcPE9g?si=hZMdLNkjHep0Kx9Y" },
-      { icon: "🚀⚙️", title: "(Upcoming)SDLC Multi-Agent Workflow", desc: "Automating various software development lifecycle (SDLC) tasks using AI Agents", kpis: "Velocity and Efficiency, Quality and Reliability", benefits: "Efficiency, Quality, and Speed", video: "https://www.youtube.com/embed/Kb79blcPE9g?si=hZMdLNkjHep0Kx9Y"},     
-    ];
-    
-    const cardsContainer = document.getElementById("cards");
+  <script> 
+    const agents = [ 
+      { icon: "🛠️", title: "Application Logs Analyser Agent", desc: "An AI-powered Application Logs Analyser Agent automatically ingests, processes, and understands log data to identify patterns and anomalies", kpis: "Mean time to resolve (MTTR), Mean time to detection (MTTD)", benefits: "Improves Uptime", video: "https://www.youtube.com/embed/JOiT6zC1S44?si=KamTL9f3m2epPfsJ" }, 
+      { icon: "🔄", title: "Legacy Code Convertor Agent", desc: "A Legacy Code Converter Agent uses GenAI to automatically analyze, refactor, and translate outdated codebases into modern programming languages", kpis: "Tech Debt Remediation, Mordernization", benefits: "Scalable & Secure", video: "https://www.youtube.com/embed/5sbZlMfsP9Y?si=O0IopJBKbPkw-Q_J" }, 
+      // Added new agents as placeholders for the other sections 
+      { icon: "⚙️", title: "Equipment Predictive Maintenance", desc: "Predicts equipment failures to prevent unplanned downtime.", kpis: "OEE Improvement, Downtime Reduction", benefits: "Proactive Maintenance", video: "https://www.youtube.com/embed/QXo9c8txU4k?si=qIcov37UKqgePnM0" }, 
+      { icon: "🚗", title: "Car Remote Diagnostics Agent", desc: "Diagnoses vehicle issues remotely, providing real-time alerts and solutions.", kpis: "Customer Satisfaction, Service Efficiency", benefits: "Reduced Service Cost", video: "https://www.youtube.com/embed/AYFmR5KCHcI?si=8KzX35WSZtviPSlM" }, 
+      { icon: "🚗🆚🚙", title: "(Upcoming)Auto OEM Market Research Agent", desc: "This agent analyzes vehicle specifications, pricing, and features across different brands to provide side-by-side comparisons", kpis: "Price-to-Feature Ratio, Performance Score, and Efficiency Rating", benefits: "Compare Auto OEM Brands", video: "https://www.youtube.com/embed/AYFmR5KCHcI?si=8KzX35WSZtviPSlM" }, 
+      { icon: "🧠🤖", title: "VIANAI - Talk to your data", desc: "The VIAN AI Hila Platform (https://www.vian.ai/hila-platform) is used to build and deploy reliable, conversational AI applications for enterprises, enabling users to get accurate, real-time insights from their own data.", kpis: "Business Decisions, Time to Insight, Accelerated Decision-Making", benefits: "Improved Business Outcomes", video: "https://www.youtube.com/embed/E-PNyffYHVY?si=yDBQ02yvw7hVcMAF" }, 
+      { icon: "✨📈💰", title: "TCS WisdomNext - the first GenAI aggregation platform", desc: "TCS WisdomNext is the first GenAI aggregation platform that lets you orchestrate the best of generative AI to solve complex business problems.", kpis: "Business outcomes, Operational efficiency", benefits: "Faster time-to-market & Improved productivity,Business Outcomes,Governance and Compliance ", video: "https://www.youtube.com/embed/Kb79blcPE9g?si=hZMdLNkjHep0Kx9Y" }, 
+      { icon: "🚀⚙️", title: "(Upcoming)SDLC Multi-Agent Workflow", desc: "Automating various software development lifecycle (SDLC) tasks using AI Agents", kpis: "Velocity and Efficiency, Quality and Reliability", benefits: "Efficiency, Quality, and Speed),video: "https://www.youtube.com/embed/Kb79blcPE9g?si=hZMdLNkjHep0Kx9Y"},      
+    ]; 
+     
+    const cardsContainer = document.getElementById("cards"); 
 
-    function renderCard(agent) {
-      const card = document.createElement("div");
-      card.className = "bg-gradient-to-b from-blue-50 to-white rounded-lg shadow-lg p-6 card";
-      card.innerHTML = `
-        <div class="text-3xl mb-4">${agent.icon}</div>
-        <h3 class="text-xl font-bold mb-2">${agent.title}</h3>
-        <p class="text-sm text-gray-700 mb-4">${agent.desc}</p>
-        <div class="text-sm text-gray-600 mb-2">KPIs: ${agent.kpis}</div>
-        <div class="text-sm text-gray-600 mb-4">BENEFITS: ${agent.benefits}</div>
-        <button onclick="openModal('${agent.video}')" class="block mt-4 px-4 py-2 text-center bg-blue-600 text-white rounded hover:bg-blue-700 w-full">Show Demo</button>
-      `;
-      cardsContainer.appendChild(card);
-    }
-    
-    // Clear existing content and render cards based on categories
-    cardsContainer.innerHTML = '';
-    
-    // Render the categories and their associated cards
-    function renderCategory(categoryTitle, agentTitles) {
-      const categoryHeader = document.createElement("div");
-      categoryHeader.className = "col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4";
-      categoryHeader.textContent = categoryTitle;
-      cardsContainer.appendChild(categoryHeader);
-      
-      agents.filter(a => agentTitles.includes(a.title)).forEach(agent => renderCard(agent));
-    }
+    function renderCard(agent) { 
+      const card = document.createElement("div"); 
+      card.className = "bg-gradient-to-b from-blue-50 to-white rounded-lg shadow-lg p-6 card"; 
+      card.innerHTML = ` 
+        <div class="text-3xl mb-4">${agent.icon}</div> 
+        <h3 class="text-xl font-bold mb-2">${agent.title}</h3> 
+        <p class="text-sm text-gray-700 mb-4">${agent.desc}</p> 
+        <div class="text-sm text-gray-600 mb-2">KPIs: ${agent.kpis}</div> 
+        <div class="text-sm text-gray-600 mb-4">BENEFITS: ${agent.benefits}</div> 
+        <button onclick="openModal('${agent.video}')" class="block mt-4 px-4 py-2 text-center bg-blue-600 text-white rounded hover:bg-blue-700 w-full">Show Demo</button> 
+      `; 
+      cardsContainer.appendChild(card); 
+    } 
+     
+    // Clear existing content and render cards based on categories 
+    cardsContainer.innerHTML = ''; 
+     
+    // Render the categories and their associated cards 
+    function renderCategory(categoryTitle, agentTitles) { 
+      const categoryHeader = document.createElement("div"); 
+      categoryHeader.className = "col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4"; 
+      categoryHeader.textContent = categoryTitle; 
+      cardsContainer.appendChild(categoryHeader); 
+       
+      agents.filter(a => agentTitles.includes(a.title)).forEach(agent => renderCard(agent)); 
+    } 
 
-    renderCategory('AI Solutions for Business', ['VIANAI - Talk to your data','TCS WisdomNext - the first GenAI aggregation platform']);
-    renderCategory('Manufacturing & Supply Chain', ['Equipment Predictive Maintenance']);
-    renderCategory('Sales and After-Sales', ['Car Remote Diagnostics Agent','(Upcoming)Auto OEM Market Research Agent']);
-    renderCategory('IT Application Maintenance & Development', ['Application Logs Analyser Agent', 'Legacy Code Convertor Agent','(Upcoming)SDLC Multi-Agent Workflow']);
-    
-    function openModal(videoURL) {
-      const videoFrame = document.getElementById('videoFrame');
-      videoFrame.src = videoURL;
-      const modal = document.getElementById('modal');
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-    }
+    renderCategory('AI Solutions for Business', ['VIANAI - Talk to your data','TCS WisdomNext - the first GenAI aggregation platform']); 
+    renderCategory('Manufacturing & Supply Chain', ['Equipment Predictive Maintenance']); 
+    renderCategory('Sales and After-Sales', ['Car Remote Diagnostics Agent','(Upcoming)Auto OEM Market Research Agent']); 
+    renderCategory('IT Application Maintenance & Development', ['Application Logs Analyser Agent', 'Legacy Code Convertor Agent','(Upcoming)SDLC Multi-Agent Workflow']); 
+     
+    function openModal(videoURL) { 
+      const videoFrame = document.getElementById('videoFrame'); 
+      videoFrame.src = videoURL; 
+      const modal = document.getElementById('modal'); 
+      modal.classList.remove('hidden'); 
+      modal.classList.add('flex'); 
+    } 
 
-    function closeModal() {
-      const videoFrame = document.getElementById('videoFrame');
-      videoFrame.src = "";
-      const modal = document.getElementById('modal');
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-    }
-  </script>
-</body>
+    function closeModal() { 
+      const videoFrame = document.getElementById('videoFrame'); 
+      videoFrame.src = ""; 
+      const modal = document.getElementById('modal'); 
+      modal.classList.add('hidden'); 
+      modal.classList.remove('flex'); 
+    } 
+  </script> 
+</body> 
 </html>
+
