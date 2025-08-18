@@ -54,7 +54,7 @@
       { icon: "⚙️", title: "Equipment Predictive Maintenance", desc: "Predicts equipment failures to prevent unplanned downtime.", kpis: "OEE Improvement, Downtime Reduction", benefits: "Proactive Maintenance", video: "https://www.youtube.com/embed/QXo9c8txU4k?si=qIcov37UKqgePnM0" }, 
       { icon: "🚗", title: "Car Remote Diagnostics Agent", desc: "Diagnoses vehicle issues remotely, providing real-time alerts and solutions.", kpis: "Customer Satisfaction, Service Efficiency", benefits: "Reduced Service Cost", video: "https://www.youtube.com/embed/AYFmR5KCHcI?si=8KzX35WSZtviPSlM" }, 
       { icon: "🚗🆚🚙", title: "(Upcoming)Auto OEM Market Research Agent", desc: "This agent analyzes vehicle specifications, pricing, and features across different brands to provide side-by-side comparisons", kpis: "Price-to-Feature Ratio, Performance Score, and Efficiency Rating", benefits: "Compare Auto OEM Brands", video: "https://www.youtube.com/embed/AYFmR5KCHcI?si=8KzX35WSZtviPSlM" }, 
-      { icon: "🧠🤖", title: "VIANAI - Talk to your data", desc: "The VIAN AI Hila Platform (https://www.vian.ai/hila-platform) is used to build and deploy reliable, conversational AI applications for enterprises, enabling users to get accurate, real-time insights from their own data.", kpis: "Business Decisions, Time to Insight, Accelerated Decision-Making", benefits: "Improved Business Outcomes", video: "https://www.youtube.com/embed/E-PNyffYHVY?si=yDBQ02yvw7hVcMAF" }, 
+      { icon: "🧠🤖", title: "V*AI - Talk to your data", desc: "The V*AI AI Hila Platform (https://www.vian.ai/hila-platform) is used to build and deploy reliable, conversational AI applications for enterprises, enabling users to get accurate, real-time insights from their own data.", kpis: "Business Decisions, Time to Insight, Accelerated Decision-Making", benefits: "Improved Business Outcomes", video: "https://www.youtube.com/embed/E-PNyffYHVY?si=yDBQ02yvw7hVcMAF" }, 
       { icon: "✨📈💰", title: "T*S WNext - the first GenAI aggregation platform", desc: "T*S WNext is the first GenAI aggregation platform that lets you orchestrate the best of generative AI to solve complex business problems.", kpis: "Business outcomes, Operational efficiency", benefits: "Faster time-to-market & Improved productivity,Business Outcomes,Governance and Compliance ", video: "https://www.youtube.com/embed/Kb79blcPE9g?si=hZMdLNkjHep0Kx9Y" }, 
       { icon: "🚀⚙️", title: "(Upcoming)SDLC Multi-Agent Workflow", desc: "Automating various software development lifecycle (SDLC) tasks using AI Agents", kpis: "Velocity and Efficiency, Quality and Reliability", benefits: "Efficiency, Quality, and Speed", video: "https://www.youtube.com/embed/Kb79blcPE9g?si=hZMdLNkjHep0Kx9Y" }    
        ]; 
@@ -88,10 +88,10 @@
       agents.filter(a => agentTitles.includes(a.title)).forEach(agent => renderCard(agent)); 
     } 
 
-    renderCategory('AI Solutions for Business', ['VIANAI - Talk to your data','T*S WNext - the first GenAI aggregation platform']); 
     renderCategory('Manufacturing & Supply Chain', ['Equipment Predictive Maintenance']); 
     renderCategory('Sales and After-Sales', ['Car Remote Diagnostics Agent','(Upcoming)Auto OEM Market Research Agent']); 
-    renderCategory('IT Application Maintenance & Development', ['Application Logs Analyser Agent', 'Legacy Code Convertor Agent','(Upcoming)SDLC Multi-Agent Workflow']); 
+    renderCategory('IT Application Maintenance & Development', ['Application Logs Analyser Agent', 'Legacy Code Convertor Agent','(Upcoming)SDLC Multi-Agent Workflow']);
+    renderCategory('AI Solutions for Business', ['V*AI - Talk to your data','T*S WNext - the first GenAI aggregation platform']);
      
     function openModal(videoURL) { 
       const videoFrame = document.getElementById('videoFrame'); 
