@@ -8,32 +8,35 @@
    <style> 
     body { 
       font-family: 'Inter', sans-serif; 
-      background: linear-gradient(to bottom right, #004080, #00b4d8); 
-      color: white; 
+      background-color: #f7f7f7; /* Light gray background */
+      color: #333; /* Dark text */
     } 
     .card { 
       transition: transform 0.3s ease; 
+      border: 1px solid #e5e7eb; /* Light border for cards */
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     } 
     .card:hover { 
       transform: translateY(-5px); 
+      box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
     } 
   </style> 
 </head> 
 <body> 
-  <section class="text-center py-24 px-6"> 
-    <h1 class="text-5xl font-extrabold mb-4">Gen AI & Deployable Agents</h1> 
-    <p class="text-lg max-w-3xl mx-auto mb-6"> 
+  <section class="text-center py-24 px-6 bg-gray-100"> 
+    <h1 class="text-5xl font-extrabold mb-4 text-gray-800">Gen AI & Deployable Agents</h1> 
+    <p class="text-lg max-w-3xl mx-auto mb-6 text-gray-600"> 
       Transform your IT and Business Services with intelligent AI agents.<br> 
       Optimize efficiency, reduce costs, and enhance sustainability across your entire manufacturing ecosystem. 
     </p> 
-    <a href="#solutions" class="inline-block px-8 py-3 bg-white text-blue-700 font-semibold rounded hover:bg-gray-200"> 
+    <a href="#solutions" class="inline-block px-8 py-3 bg-black text-white font-semibold rounded hover:bg-gray-800"> 
       Explore Solutions 
     </a> 
   </section> 
 
   <section id="solutions" class="bg-white text-gray-900 py-16 px-6"> 
-    <h2 class="text-3xl font-bold text-center mb-10">Featured Agents</h2> 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="cards"> 
+    <h2 class="text-3xl font-bold text-center mb-10 text-gray-800">Featured Agents</h2> 
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="cards"> 
       </div> 
   </section> 
 
@@ -50,7 +53,6 @@
     const agents = [ 
       { icon: "🛠️", title: "Application Logs Analyser Agent", desc: "An AI-powered Application Logs Analyser Agent automatically ingests, processes, and understands log data to identify patterns and anomalies", kpis: "Mean time to resolve (MTTR), Mean time to detection (MTTD)", benefits: "Improves Uptime", video: "https://www.youtube.com/embed/JOiT6zC1S44?si=KamTL9f3m2epPfsJ" }, 
       { icon: "🔄", title: "Legacy Code Convertor Agent", desc: "A Legacy Code Converter Agent uses GenAI to automatically analyze, refactor, and translate outdated codebases into modern programming languages", kpis: "Tech Debt Remediation, Mordernization", benefits: "Scalable & Secure", video: "https://www.youtube.com/embed/5sbZlMfsP9Y?si=O0IopJBKbPkw-Q_J" }, 
-      // Added new agents as placeholders for the other sections 
       { icon: "⚙️", title: "Equipment Predictive Maintenance", desc: "Predicts equipment failures to prevent unplanned downtime.", kpis: "OEE Improvement, Downtime Reduction", benefits: "Proactive Maintenance", video: "https://www.youtube.com/embed/QXo9c8txU4k?si=qIcov37UKqgePnM0" }, 
       { icon: "🚗", title: "Car Remote Diagnostics Agent", desc: "Diagnoses vehicle issues remotely, providing real-time alerts and solutions.", kpis: "Customer Satisfaction, Service Efficiency", benefits: "Reduced Service Cost", video: "https://www.youtube.com/embed/AYFmR5KCHcI?si=8KzX35WSZtviPSlM" }, 
       { icon: "🚗🆚🚙", title: "(Upcoming)Auto OEM Market Research Agent", desc: "This agent analyzes vehicle specifications, pricing, and features across different brands to provide side-by-side comparisons", kpis: "Price-to-Feature Ratio, Performance Score, and Efficiency Rating", benefits: "Compare Auto OEM Brands", video: "https://www.youtube.com/embed/PmVusX12rZQ?si=bupN-fEXPJnAM4n5" }, 
@@ -63,14 +65,14 @@
 
     function renderCard(agent) { 
       const card = document.createElement("div"); 
-      card.className = "bg-gradient-to-b from-blue-50 to-white rounded-lg shadow-lg p-6 card"; 
+      card.className = "bg-white rounded-lg shadow-lg p-6 card"; 
       card.innerHTML = ` 
-        <div class="text-3xl mb-4">${agent.icon}</div> 
-        <h3 class="text-xl font-bold mb-2">${agent.title}</h3> 
+        <div class="text-3xl mb-4 text-center">${agent.icon}</div> 
+        <h3 class="text-xl font-bold mb-2 text-gray-900">${agent.title}</h3> 
         <p class="text-sm text-gray-700 mb-4">${agent.desc}</p> 
-        <div class="text-sm text-gray-600 mb-2">KPIs: ${agent.kpis}</div> 
-        <div class="text-sm text-gray-600 mb-4">BENEFITS: ${agent.benefits}</div> 
-        <button onclick="openModal('${agent.video}')" class="block mt-4 px-4 py-2 text-center bg-blue-600 text-white rounded hover:bg-blue-700 w-full">Show Demo</button> 
+        <div class="text-sm text-gray-600 mb-2"><strong>KPIs:</strong> ${agent.kpis}</div> 
+        <div class="text-sm text-gray-600 mb-4"><strong>BENEFITS:</strong> ${agent.benefits}</div> 
+        <button onclick="openModal('${agent.video}')" class="block mt-4 px-4 py-2 text-center bg-gray-800 text-white rounded hover:bg-gray-900 w-full">Show Demo</button> 
       `; 
       cardsContainer.appendChild(card); 
     } 
@@ -81,7 +83,7 @@
     // Render the categories and their associated cards 
     function renderCategory(categoryTitle, agentTitles) { 
       const categoryHeader = document.createElement("div"); 
-      categoryHeader.className = "col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4"; 
+      categoryHeader.className = "col-span-full text-2xl font-semibold text-gray-800 mt-12 mb-4 text-center"; 
       categoryHeader.textContent = categoryTitle; 
       cardsContainer.appendChild(categoryHeader); 
        
@@ -111,4 +113,3 @@
   </script> 
 </body> 
 </html>
-
